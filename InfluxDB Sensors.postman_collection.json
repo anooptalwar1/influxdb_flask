@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "a74e388b-7fae-41eb-93ad-70b6510fb512",
+		"name": "InfluxDB Sensors",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list_databases",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/databases/list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"databases",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get data points",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/sensors/airSensors?sensor_id=TLM0203",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sensors",
+						"airSensors"
+					],
+					"query": [
+						{
+							"key": "sensor_id",
+							"value": "TLM0203"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get data points by timestamp",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/sensors/airSensors?start_timestamp=1654533706000000000&end_timestamp=1654533886000000000",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sensors",
+						"airSensors"
+					],
+					"query": [
+						{
+							"key": "start_timestamp",
+							"value": "1654533706000000000"
+						},
+						{
+							"key": "end_timestamp",
+							"value": "1654533886000000000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_database",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/databases/influxtest",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"databases",
+						"influxtest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Anoop Talwar/Downloads/sensor_test.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/sensors/files",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"sensors",
+						"files"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
