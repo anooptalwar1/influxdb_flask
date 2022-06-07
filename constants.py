@@ -1,0 +1,11 @@
+SECRET_KEY = 'applesandpears'
+DEBUG = True
+INFLUXDB_DATABASE = 'influxtest'
+INFLUXDB_HOST = 'localhost'
+INFLUXDB_USER = 'admin'
+INFLUXDB_PORT= 8086
+INFLUXDB_PASSWORD= 'Password1'
+INFLUXDB_SSL = False
+INFLUXDB_VERIFY_SSL = False
+INFLUXDB_TIMEOUT = None
+
